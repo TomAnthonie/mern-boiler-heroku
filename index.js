@@ -4,10 +4,6 @@ const app = express();
 
 app.use(morgan('dev'));
 
-app.get('/', (req, res) => {
-    res.send({hi: 'there'})
-});
-
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 
